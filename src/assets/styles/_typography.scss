@@ -1,15 +1,18 @@
 h1 {
 	font-size: 3.375rem; // 54px
+  color: $black;
 }
 
 p,
 .text {
 	font-size: 1rem;
+  color: $font-lightgray;
 
 	&.text--large {
 		font-family: 'Nekst-Black';
 		font-weight: 700;
 		font-size: 3.375rem; // 54px
+    color: $font-darkgray;
 	}
 
 	&.text--bold {
