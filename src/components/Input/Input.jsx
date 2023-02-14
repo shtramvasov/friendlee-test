@@ -10,12 +10,17 @@ function Input({ label, initialValue, variant }) {
 			<label>
 				<p className={styles.input__label}>{label}</p>
 				<div className={styles.input__fields}>
-					<input
-						value={formatNumber(value)}
-						onChange={e => setValue(e.target.value)}
-						type='text'
-						className={classnames(styles.input__field, styles.input__number)}
-					/>
+					<span className={styles.input__wrapper}>
+						<input
+							value={formatNumber(value)}
+							onChange={e => setValue(e.target.value)}
+							type='text'
+							className={classnames(styles.input__field, styles.input__number)}
+						/>
+						<p className={styles.input__suffix}>
+							{variant == 'price' ? '₽' : variant == 'month' ? 'мес.' : ''}
+						</p>
+					</span>
 					<input
 						type='range'
 						min={variant == 'price' ? 1500000 : variant == 'month' ? 6 : 10}
