@@ -33,6 +33,12 @@
 	color: $font-lightgray;
 	font-family: 'Nekst-Black';
 	font-weight: 700;
+
+	&_fee {
+		background-color: $bg-darkgray;
+		padding: 0.6rem 1rem;
+		border-radius: 1rem;
+	}
 }
 
 .input__field {

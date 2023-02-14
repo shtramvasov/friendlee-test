@@ -1,8 +1,5 @@
 @import '../../assets/styles/breakpoints';
 
-.form {
-}
-
 .form__fieldset {
 	display: flex;
 	flex-direction: column;
@@ -14,9 +11,6 @@
 .form__footer {
 	display: grid;
 	gap: 2rem;
-}
-
-.form__details {
 }
 
 @media (min-width: $md) {
@@ -36,7 +30,7 @@
 		gap: 2rem;
 	}
 
-  .form__footer {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+	.form__footer {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }

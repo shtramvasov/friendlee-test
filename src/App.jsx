@@ -6,7 +6,7 @@ function App() {
 	return (
 		<Layout>
 			<Heading text={'Рассчитайте стоимость автомобиля в лизинг'} />
-      <Form />
+			<Form />
 		</Layout>
 	)
 }

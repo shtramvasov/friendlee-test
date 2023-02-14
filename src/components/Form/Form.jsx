@@ -1,32 +1,55 @@
+import { useEffect, useState } from 'react'
 import Input from '@components/Input/Input'
+import Button from '@components/Button/Button'
+import { formatNumber } from '@utils/formatNumbers'
 import styles from './Form.module.scss'
 
 function Form() {
+	const [data, setData] = useState({ price: 3300000, fee: 420000, feePercent: 13, month: 60, total: 4467313,  totalMonthly: 114455})
+
+  useEffect(() => {
+
+  })
+
 	return (
 		<form className={styles.form}>
 			<fieldset className={styles.form__fieldset}>
 				<Input
 					label='Стоимость автомобиля'
-					initialValue={3300000}
+					initialValue={data.price}
+					handleChange={newValue =>
+						setData(prev => ({ ...prev, price: newValue }))
+					}
 					variant='price'
 				/>
 				<Input
 					label='Первоначальный взнос'
-					initialValue={420000}
+					initialValue={data.fee}
+          price={data.price}
+					handleChange={newValue =>
+						setData(prev => ({ ...prev, fee: newValue }))
+					}
 					variant='fee'
 				/>
-				<Input label='Срок лизинга' initialValue={60} variant='month' />
+				<Input
+					label='Срок лизинга'
+					initialValue={data.month}
+					handleChange={newValue =>
+						setData(prev => ({ ...prev, month: newValue }))
+					}
+					variant='month'
+				/>
 			</fieldset>
 			<footer className={styles.form__footer}>
-				<div className={styles.form__details}>
+				<div>
 					<p>Сумма договора лизинга</p>
-					<p className='text--large'>4 467 313 ₽</p>
+					<p className='text--large'>{formatNumber(data.total)} ₽</p>
 				</div>
-				<div className={styles.form__details}>
+				<div>
 					<p>Ежемесячный платеж от</p>
-					<p className='text--large'>114 455 ₽</p>
+					<p className='text--large'>{formatNumber(data.totalMonthly)} ₽</p>
 				</div>
-        <button>Отправить</button>
+				<Button>Оставить заявку</Button>
 			</footer>
 		</form>
 	)
