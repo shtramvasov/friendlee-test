@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Gilroy-Regular';
+  font-weight: 400;
+  src: local('Gilroy-Regular'), url('../fonts/Gilroy-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nekst-Black';
+  font-weight: 700;
+  src: local('Nekst-Black'), url('../fonts/Nekst-Black.woff2') format('woff2');
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Gilroy-Regular', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
