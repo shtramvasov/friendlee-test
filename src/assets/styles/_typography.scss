@@ -1,0 +1,35 @@
+h1 {
+	font-size: 3.375rem; // 54px
+}
+
+p,
+.text {
+	font-size: 1rem;
+
+	&.text--large {
+		font-family: 'Nekst-Black';
+		font-weight: 700;
+		font-size: 3.375rem; // 54px
+	}
+
+	&.text--bold {
+		font-family: 'Nekst-Black';
+		font-weight: 700;
+		font-size: 1.875rem; // 30px
+	}
+}
+@media (max-width: $sm) {
+	h1 {
+		font-size: 2.125rem; // 34px
+	}
+
+	p,
+	.text {
+		font-size: 0.875rem; // 14px
+
+		&.text--bold,
+		&.text--large {
+			font-size: 1.375rem; // 22px
+		}
+	}
+}
