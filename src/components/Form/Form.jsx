@@ -14,6 +14,7 @@ function Form() {
 		total: 4467313,
 		totalMonthly: 114455,
 	})
+	const [isSubmited, setIsSubmited] = useState(false)
 
 	useEffect(() => {
 		setData(prev => ({
@@ -23,8 +24,14 @@ function Form() {
 		}))
 	}, [data.price, data.fee, data.month, data.totalMonthly])
 
+	const handleSubmit = e => {
+		e.preventDefault()
+		setIsSubmited(true)
+		alert(JSON.stringify(data))
+	}
+
 	return (
-		<form className={styles.form}>
+		<form className={styles.form} onSubmit={handleSubmit}>
 			<fieldset className={styles.form__fieldset}>
 				<Input
 					label='Стоимость автомобиля'
@@ -61,7 +68,7 @@ function Form() {
 					<p>Ежемесячный платеж от</p>
 					<p className='text--large'>{formatNumber(data.totalMonthly)} ₽</p>
 				</div>
-				<Button>Оставить заявку</Button>
+				<Button disabled={isSubmited}>Оставить заявку</Button>
 			</footer>
 		</form>
 	)
