@@ -1,5 +1,2 @@
-import { countTotalMonthly } from './countTotalMonthly'
-
-export const countTotal = () => {
-  fee + months * totalMonthly
-}
+export const countTotal = (fee, month, totalMonthly) =>
+	Math.ceil(fee + month * totalMonthly)

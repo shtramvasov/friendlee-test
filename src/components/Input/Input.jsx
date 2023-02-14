@@ -3,13 +3,25 @@ import styles from './Input.module.scss'
 import classnames from 'classnames'
 import { getPercentages } from '@utils/getPercentages'
 
-function Input({ label, initialValue, variant, handleChange, price }) {
+function Input({
+	label,
+	initialValue,
+	variant,
+	handleChange,
+	price,
+	disabled = false,
+}) {
 	return (
 		<label className={styles.input}>
 			<p className={styles.input__label}>{label}</p>
-			<div className={styles.input__fields}>
+			<div
+				className={classnames(styles.input__fields, {
+					[styles.input__fields_disabled]: disabled,
+				})}
+			>
 				<span className={styles.input__wrapper}>
 					<input
+						disabled={disabled}
 						value={formatNumber(initialValue)}
 						onChange={e => handleChange(e.target.value)}
 						type='text'
@@ -28,6 +40,7 @@ function Input({ label, initialValue, variant, handleChange, price }) {
 					</p>
 				</span>
 				<input
+					disabled={disabled}
 					type='range'
 					min={
 						variant == 'price' ? 1500000 : variant == 'month' ? 6 : price * 0.1

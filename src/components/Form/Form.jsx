@@ -2,14 +2,26 @@ import { useEffect, useState } from 'react'
 import Input from '@components/Input/Input'
 import Button from '@components/Button/Button'
 import { formatNumber } from '@utils/formatNumbers'
+import { countTotal } from '@utils/countTotal'
+import { countTotalMonthly } from '@utils/countTotalMonthly'
 import styles from './Form.module.scss'
 
 function Form() {
-	const [data, setData] = useState({ price: 3300000, fee: 420000, feePercent: 13, month: 60, total: 4467313,  totalMonthly: 114455})
+	const [data, setData] = useState({
+		price: 3300000,
+		fee: 420000,
+		month: 60,
+		total: 4467313,
+		totalMonthly: 114455,
+	})
 
-  useEffect(() => {
-
-  })
+	useEffect(() => {
+		setData(prev => ({
+			...prev,
+			totalMonthly: countTotalMonthly(data.price, data.fee, data.month),
+			total: countTotal(data.fee, data.month, data.totalMonthly),
+		}))
+	}, [data.price, data.fee, data.month, data.totalMonthly])
 
 	return (
 		<form className={styles.form}>
@@ -25,7 +37,7 @@ function Form() {
 				<Input
 					label='Первоначальный взнос'
 					initialValue={data.fee}
-          price={data.price}
+					price={data.price}
 					handleChange={newValue =>
 						setData(prev => ({ ...prev, fee: newValue }))
 					}
