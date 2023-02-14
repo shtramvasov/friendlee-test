@@ -1,4 +1,8 @@
 h1 {
+  font-family: 'Nekst-Black';
+  font-weight: 700;
+  line-height: 0.85;
+  padding-bottom: 2rem;
 	font-size: 2.125rem; // 34px
 	color: $black;
 }
@@ -25,6 +29,7 @@ p,
 @media (min-width: $md) {
 	h1 {
 		font-size: 3.375rem; // 54px
+    padding-bottom: 2.75rem;
 	}
 
 	p,
@@ -39,4 +44,10 @@ p,
 			font-size: 1.875rem; // 30px
 		}
 	}
+}
+
+@media (min-width: $lg) {
+  h1 {
+    padding-bottom: 2rem;
+  }
 }
