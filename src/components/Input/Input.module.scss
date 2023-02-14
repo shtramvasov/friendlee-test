@@ -4,6 +4,8 @@
 
 .input {
 	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .input__label {
@@ -20,6 +22,7 @@
 .input__wrapper {
 	position: relative;
 	display: flex;
+	width: 100%;
 	align-items: center;
 }
 
@@ -37,6 +40,7 @@
 	font-weight: 700;
 	outline: none;
 	border: none;
+	width: 100%;
 }
 
 .input__range {
@@ -55,6 +59,11 @@
 	padding: 1.25rem;
 	border-radius: 1rem;
 	background-color: $bg-lightgray;
+
+	&:focus {
+		background-color: transparent;
+		outline: 2px solid $bg-lightgray;
+	}
 }
 
 @media (min-width: $md) {

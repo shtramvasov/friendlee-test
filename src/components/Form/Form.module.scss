@@ -1,7 +1,42 @@
-.form {
+@import '../../assets/styles/breakpoints';
 
+.form {
 }
 
 .form__fieldset {
-  border: none;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	border: none;
+	padding-bottom: 1rem;
+}
+
+.form__footer {
+	display: grid;
+	gap: 2rem;
+}
+
+.form__details {
+}
+
+@media (min-width: $md) {
+	.form__fieldset {
+		gap: 2rem;
+	}
+
+	.form__footer {
+		padding-top: 2rem;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: $lg) {
+	.form__fieldset {
+		flex-direction: row;
+		gap: 2rem;
+	}
+
+  .form__footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
