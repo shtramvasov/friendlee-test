@@ -8,7 +8,7 @@ button {
 	font-weight: 700;
 	border: none;
 	font-size: 1.375rem;
-	padding: 1rem;
+	padding: 1.1rem;
 	border-radius: 2.5rem;
 	color: $white;
 	background-color: $orange;
@@ -28,5 +28,11 @@ button {
 		cursor: default;
 		background-color: $orange;
 		opacity: 0.4;
+	}
+}
+
+@media (min-width: $md) {
+	.button {
+		font-size: 1.875rem;
 	}
 }

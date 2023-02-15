@@ -33,13 +33,15 @@
 
 .input__suffix {
 	position: absolute;
-	right: 1.25rem;
+	right: 1.31rem;
+	top: 1.08rem;
 	font-size: 1.375rem;
 	color: $font-lightgray;
 	font-family: 'Nekst-Black';
 	font-weight: 700;
 
 	&_fee {
+		top: 0.5rem;
 		background-color: $bg-darkgray;
 		padding: 0.6rem 1rem;
 		border-radius: 1rem;
@@ -67,7 +69,7 @@
 .input__number {
 	font-size: 1.375rem;
 	color: $font-lightgray;
-	padding: 1.25rem;
+	padding: 1.15rem 1.2rem;
 	border-radius: 1rem;
 	background-color: $bg-lightgray;
 
@@ -84,11 +86,23 @@
 
 	.input__number {
 		font-size: 1.875rem;
-		padding: 1.5rem;
+		padding: 1.1rem 1.5rem;
 	}
 
 	.input__suffix {
 		right: 1.5rem;
 		font-size: 1.875rem;
+	}
+}
+
+@media (min-width: $lg) {
+	.input__number {
+		padding: 1.1rem 1.9rem;
+	}
+}
+
+@media (min-width: $xl) {
+	.input__number {
+		padding: 1rem 1.4rem;
 	}
 }

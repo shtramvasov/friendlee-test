@@ -60,11 +60,11 @@ function Form() {
 				/>
 			</fieldset>
 			<footer className={styles.form__footer}>
-				<div>
+				<div className={styles.form_detail}>
 					<p>Сумма договора лизинга</p>
 					<p className='text--large'>{formatNumber(data.total)} ₽</p>
 				</div>
-				<div>
+				<div className={styles.form_detail}>
 					<p>Ежемесячный платеж от</p>
 					<p className='text--large'>{formatNumber(data.totalMonthly)} ₽</p>
 				</div>
